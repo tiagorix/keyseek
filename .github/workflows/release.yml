@@ -1,0 +1,27 @@
+# Pushing a tag like v1.0.0 builds Keyseek and publishes it as a GitHub release.
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build
+        run: ./release.sh "${GITHUB_REF_NAME#v}"
+        env:
+          BUILD_NUMBER: ${{ github.run_number }}
+
+      - name: Publish
+        run: >
+          gh release create "$GITHUB_REF_NAME" build/release/Keyseek-*.zip
+          --title "Keyseek ${GITHUB_REF_NAME#v}" --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}

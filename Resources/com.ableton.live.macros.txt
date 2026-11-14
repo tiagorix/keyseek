@@ -1,0 +1,37 @@
+# Starter macros for Ableton Live, offered by the wand button in Keyseek's macro editor.
+# Same format as the user's macro file: "## Name", then one step per line.
+
+## Record on New Audio Track
+Insert Audio Track
+Arm Selected Tracks
+Record
+
+## Record on New MIDI Track
+Insert MIDI Track
+Arm Selected Tracks
+Record
+
+## Loop Selection and Play
+Toggle Loop Brace
+Play Arrangement View Selection
+
+## Consolidate and Rename
+Consolidate Selection into Clip
+Rename
+
+## Group Tracks and Rename
+Group Selected Tracks
+Rename
+
+## Duplicate and Reverse Clip
+Duplicate
+Reverse Audio Clip Selection
+
+## Fit Arrangement to Window
+Optimize Arrangement Width
+Optimize Arrangement Height
+
+## Save and Export Audio
+Save Live Set
+wait 0.5
+Export Audio/Video
